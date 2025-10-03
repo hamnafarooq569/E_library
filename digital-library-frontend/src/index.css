@@ -1,0 +1,94 @@
+/* ---------- THEME VARIABLES ---------- */
+:root {
+  --bg-start: #0a1d1a;
+  --bg-end:   #132b28;
+  --surface:  #0e2622;
+  --text:     #f5f5f5;
+  --muted:    #cbd5d1;
+  --brand:    #00e6a8; /* mint */
+  --brand-strong: #00c28e;
+  --danger:   #e5484d;
+}
+
+/* [optional] future light theme: just change data-theme attr on <html> or <body> */
+:root[data-theme="light"] {
+  --bg-start: #f8fafc;
+  --bg-end:   #eef2f5;
+  --surface:  #ffffff;
+  --text:     #0f172a;
+  --muted:    #475569;
+  --brand:    #00a67c;
+  --brand-strong: #008b69;
+}
+
+/* ---------- GLOBAL ---------- */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 15% 10%, rgba(0,230,168,0.08), transparent 60%),
+              linear-gradient(135deg, var(--bg-start), var(--bg-end));
+}
+
+/* containers */
+.page { padding: 24px; max-width: 1100px; margin: 0 auto; }
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--surface);
+  padding: 12px 24px; border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.logo {
+  margin: 0;
+  font-size: 20px; font-weight: 800; letter-spacing: .2px;
+  color: var(--brand);
+}
+.links a, .links button {
+  margin-left: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text);
+  background: transparent; border: 0; cursor: pointer;
+}
+.links a:hover, .links button:hover { color: var(--brand); }
+
+/* ---------- FORMS & BUTTONS ---------- */
+.field {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.9);
+  color: #0a1d1a;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  background: var(--brand);
+  color: #0a1d1a;
+  cursor: pointer;
+  transition: transform .05s ease, background .2s ease;
+}
+.btn:hover { background: var(--brand-strong); }
+.btn:active { transform: translateY(1px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.btn-outline:hover { border-color: var(--brand); color: var(--brand); }
+
+.text-muted { color: var(--muted); }
+
+.btn[disabled], .btn:disabled, .btn-outline[disabled] {
+  opacity: .6;
+  cursor: not-allowed;
+}
