@@ -20,7 +20,7 @@
     "migration:generate": "npm run typeorm -- migration:generate src/migrations/Init --dataSource src/data-source.ts",
     "migration:run": "npm run typeorm -- migration:run --dataSource src/data-source.ts",
     "migration:revert": "npm run typeorm -- migration:revert --dataSource src/data-source.ts",
-    "start": "nest start",
+    "start": "node dist/main",
     "start:dev": "nest start --watch"
   },
   "dependencies": {
